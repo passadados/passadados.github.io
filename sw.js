@@ -1,7 +1,7 @@
 // Service worker do passadados: deixa o app abrir offline.
 // IMPORTANTE: a cada nova publicação, aumente o número da VERSÃO abaixo (v1 -> v2 ...).
 // Assim os aparelhos baixam os arquivos novos e mostram o aviso "Nova versão disponível".
-const VERSION = 'passadados-v1';
+const VERSION = 'passadados-v2';
 
 const ASSETS = [
   './',

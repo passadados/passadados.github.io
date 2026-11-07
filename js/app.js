@@ -60,6 +60,8 @@ function showScreen(name) {
 // Mostra a introdução (primeira visita) ou a página de privacidade (aberta pelas configurações).
 function openIntro(first) {
   const box = $('#introActions');
+  // Primeira visita: só o essencial. Vindo de Configurações: já mostra tudo.
+  $('#introMore').open = !first;
   if (first) {
     box.replaceChildren(
       h('button', { type: 'button', class: 'btn primary block', id: 'btn-start', text: 'Começar a usar', onclick: async () => {

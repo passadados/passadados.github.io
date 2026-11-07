@@ -254,3 +254,27 @@ dialog.dlg::backdrop { background: rgba(5, 12, 24, .6); }
 .noscript { padding: 16px; background: var(--warn-soft); }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+/* Tela inicial: primeira dobra enxuta + "Saiba mais…" */
+.hero { text-align: center; padding: 10px 4px 16px; }
+.hero-icon { border-radius: 20px; display: block; margin: 0 auto 14px; box-shadow: var(--shadow); }
+.hero h1 { font-size: 1.75rem; letter-spacing: -.5px; }
+.hero .lead { margin: 0 auto 14px; max-width: 34rem; }
+.badges { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.badges li {
+  background: var(--primary-soft); color: var(--text); border-radius: 999px;
+  padding: 6px 14px; font-size: .9rem; font-weight: 700;
+}
+details.more { margin-top: 8px; }
+details.more > summary {
+  list-style: none; cursor: pointer; text-align: center; min-height: 52px;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  font-weight: 700; font-size: 1.05rem; color: var(--primary);
+  border: 1.5px solid var(--border); border-radius: 14px; background: var(--surface);
+}
+details.more > summary::-webkit-details-marker { display: none; }
+details.more > summary::after { content: "▾"; transition: transform .15s; }
+details.more[open] > summary { margin-bottom: 14px; }
+details.more[open] > summary::after { transform: rotate(180deg); }
+.feature-list { padding-left: 1.2rem; margin: 0; }
+.feature-list li { margin-bottom: .55rem; }

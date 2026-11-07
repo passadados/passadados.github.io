@@ -34,47 +34,86 @@
     </header>
 
     <main id="main" tabindex="-1">
-      <!-- Introdução / privacidade / LGPD -->
+      <!-- Introdução: só o essencial na primeira dobra; o resto fica em "Saiba mais…" -->
       <section id="screen-intro" class="screen" hidden>
         <div class="hero">
+          <img class="hero-icon" src="./icons/icon.svg" alt="" width="84" height="84">
           <h1>Seus dados à mão, sem falar em voz alta</h1>
-          <p class="lead">O <strong>passadados</strong> guarda seus dados pessoais <strong>somente neste aparelho</strong> e mostra na tela o que você escolher, para a recepção ler e copiar. Nada de narrar CPF, endereço e telefone para todo mundo ouvir.</p>
+          <p class="lead">Guarde seus dados pessoais <strong>só no seu celular</strong> e mostre na tela o que a recepção pedir, para ela ler e copiar. Chega de falar CPF, endereço e telefone para todo mundo ouvir.</p>
+          <ul class="badges" aria-label="Destaques">
+            <li>100% grátis</li>
+            <li>Sem login</li>
+            <li>Dados só no seu aparelho</li>
+          </ul>
         </div>
 
-        <article class="card">
-          <h2>Seus dados ficam só com você</h2>
-          <p>Tudo o que você digita no passadados é salvo <strong>somente neste aparelho, dentro do seu navegador</strong>. Não existe cadastro, não existe login e não existe servidor guardando suas informações. Nós <strong>não temos acesso</strong> aos seus dados e não conseguimos ver, copiar, recuperar ou vender nada do que você guardou.</p>
-        </article>
-
-        <article class="card">
-          <h2>Sobre a LGPD</h2>
-          <p>O passadados foi pensado para respeitar a Lei Geral de Proteção de Dados (LGPD) desde a origem: <strong>não coletamos, não recebemos e não armazenamos</strong> seus dados pessoais. Como as informações nunca saem do seu aparelho, você continua sendo a única pessoa responsável e controladora dos seus dados. Você pode <strong>ver, corrigir, exportar e apagar</strong> tudo a qualquer momento, direto no aplicativo.</p>
-        </article>
-
-        <article class="card highlight">
-          <h2>Teste você mesmo</h2>
-          <p>Não precisa acreditar em nós. Faça este teste simples:</p>
-          <ol class="steps-list">
-            <li>Cadastre alguns dados de exemplo neste navegador.</li>
-            <li>Abra o passadados em <strong>outro navegador</strong>, ou em <strong>outro celular ou computador</strong>.</li>
-            <li>Você verá o app <strong>vazio</strong>. Isso mostra que os dados não estão em nenhum servidor: estão só no aparelho onde você os digitou.</li>
-          </ol>
-          <p>Quer ir além? Abra as ferramentas do desenvolvedor do navegador, na aba “Rede” (Network), e veja que ao salvar seus dados <strong>nenhuma informação é enviada</strong> para a internet.</p>
-        </article>
-
-        <article class="card warn">
-          <h2>Limitações importantes</h2>
-          <p>Como os dados ficam apenas no seu aparelho, eles podem ser perdidos se você <strong>limpar os dados do navegador</strong>, <strong>desinstalar o app</strong>, <strong>trocar ou perder o celular</strong>, ou se o sistema apagar o armazenamento do site. Por isso, <strong>faça backups regularmente</strong> (Configurações → Exportar) e, se possível, <strong>instale o passadados na tela inicial</strong>.</p>
-          <p>Quem estiver com o seu celular desbloqueado também pode abrir o app. Ative o <strong>PIN ou a biometria</strong> em Configurações se quiser uma camada extra de proteção.</p>
-        </article>
-
-        <article class="card">
-          <h2>A única consulta externa: o CEP</h2>
-          <p>Para preencher o endereço automaticamente, o passadados consulta o serviço público <strong>ViaCEP</strong>, enviando <strong>apenas o número do CEP que você digitou</strong>. Nenhum outro dado é enviado. Você pode desativar essa busca em Configurações e preencher o endereço à mão.</p>
-          <p class="footnote">Como em qualquer site, o provedor de hospedagem pode registrar dados técnicos de acesso (como o endereço IP de quem visita a página). Os dados que você cadastra no passadados não são enviados a ninguém.</p>
-        </article>
-
         <div class="actions-col" id="introActions"></div>
+
+        <details class="more" id="introMore">
+          <summary>Saiba mais…</summary>
+          <div class="more-body">
+
+            <article class="card">
+              <h2>O que você pode fazer</h2>
+              <ul class="feature-list">
+                <li><strong>Vários perfis:</strong> os seus dados e os de filhos, cônjuge ou pais, cada um no seu perfil.</li>
+                <li><strong>Campos prontos:</strong> nome, CPF, RG, CNH, endereço, e-mail, celular, convênio, tipo sanguíneo, placa, chave PIX e mais.</li>
+                <li><strong>Campos criados por você:</strong> matrícula, número do SUS, cartão da academia... o que precisar.</li>
+                <li><strong>Endereço pelo CEP:</strong> digite o CEP e o endereço é preenchido. Você pode editar tudo depois.</li>
+                <li><strong>Marcar o que mostrar:</strong> escolha só os campos pedidos e abra uma tela com letra grande e botão de copiar em cada item.</li>
+                <li><strong>Conjuntos salvos:</strong> guarde seleções como “Dentista” ou “Hospital” e reutilize com um toque.</li>
+                <li><strong>Exportar e importar:</strong> salve um arquivo de backup (com senha, se quiser) para trocar de celular ou recuperar seus dados.</li>
+                <li><strong>Proteção opcional:</strong> PIN ou senha, que criptografa os dados, e biometria do aparelho.</li>
+                <li><strong>Tema claro ou escuro</strong> e funcionamento sem internet depois da primeira visita.</li>
+              </ul>
+            </article>
+
+            <article class="card highlight">
+              <h2>Grátis, para sempre</h2>
+              <p>O passadados é gratuito e vai continuar sendo: sem mensalidade, sem anúncios e sem cadastro.</p>
+            </article>
+
+            <article class="card">
+              <h2>Instale quando quiser</h2>
+              <p>Você pode começar a usar agora e instalar o app na tela inicial depois, em <strong>Configurações → Instalar aplicativo</strong>. Instalado, ele abre mais rápido e ajuda o navegador a manter seus dados guardados.</p>
+              <p class="footnote">No iPhone, o app instalado pode ter um armazenamento separado do Safari. Se você já cadastrou dados antes de instalar, exporte um backup e importe dentro do app instalado.</p>
+            </article>
+
+            <article class="card">
+              <h2>Seus dados ficam só com você</h2>
+              <p>Tudo o que você digita no passadados é salvo <strong>somente neste aparelho, dentro do seu navegador</strong>. Não existe cadastro, não existe login e não existe servidor guardando suas informações. Nós <strong>não temos acesso</strong> aos seus dados e não conseguimos ver, copiar, recuperar ou vender nada do que você guardou.</p>
+            </article>
+
+            <article class="card">
+              <h2>Sobre a LGPD</h2>
+              <p>O passadados foi pensado para respeitar a Lei Geral de Proteção de Dados (LGPD) desde a origem: <strong>não coletamos, não recebemos e não armazenamos</strong> seus dados pessoais. Como as informações nunca saem do seu aparelho, você continua sendo a única pessoa responsável e controladora dos seus dados. Você pode <strong>ver, corrigir, exportar e apagar</strong> tudo a qualquer momento, direto no aplicativo.</p>
+            </article>
+
+            <article class="card highlight">
+              <h2>Teste você mesmo</h2>
+              <p>Não precisa acreditar em nós. Faça este teste simples:</p>
+              <ol class="steps-list">
+                <li>Cadastre alguns dados de exemplo neste navegador.</li>
+                <li>Abra o passadados em <strong>outro navegador</strong>, ou em <strong>outro celular ou computador</strong>.</li>
+                <li>Você verá o app <strong>vazio</strong>. Isso mostra que os dados não estão em nenhum servidor: estão só no aparelho onde você os digitou.</li>
+              </ol>
+              <p>Quer ir além? Abra as ferramentas do desenvolvedor do navegador, na aba “Rede” (Network), e veja que ao salvar seus dados <strong>nenhuma informação é enviada</strong> para a internet.</p>
+            </article>
+
+            <article class="card warn">
+              <h2>Limitações importantes</h2>
+              <p>Como os dados ficam apenas no seu aparelho, eles podem ser perdidos se você <strong>limpar os dados do navegador</strong>, <strong>desinstalar o app</strong>, <strong>trocar ou perder o celular</strong>, ou se o sistema apagar o armazenamento do site. Por isso, <strong>faça backups regularmente</strong> (Configurações → Exportar) e, se possível, <strong>instale o passadados na tela inicial</strong>.</p>
+              <p>Quem estiver com o seu celular desbloqueado também pode abrir o app. Ative o <strong>PIN ou a biometria</strong> em Configurações se quiser uma camada extra de proteção.</p>
+            </article>
+
+            <article class="card">
+              <h2>A única consulta externa: o CEP</h2>
+              <p>Para preencher o endereço automaticamente, o passadados consulta o serviço público <strong>ViaCEP</strong>, enviando <strong>apenas o número do CEP que você digitou</strong>. Nenhum outro dado é enviado. Você pode desativar essa busca em Configurações e preencher o endereço à mão.</p>
+              <p class="footnote">Como em qualquer site, o provedor de hospedagem pode registrar dados técnicos de acesso (como o endereço IP de quem visita a página). Os dados que você cadastra no passadados não são enviados a ninguém.</p>
+            </article>
+
+          </div>
+        </details>
       </section>
 
       <section id="screen-data" class="screen" hidden></section>
