@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://viacep.com.br; manifest-src 'self'; worker-src 'self'; form-action 'none'; base-uri 'self'; object-src 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#0f5fb8">
+  <meta name="description" content="passadados: guarde seus dados pessoais só no seu aparelho e mostre na tela, sem precisar falar em voz alta.">
+  <title>passadados</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="passadados">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="./js/theme-init.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header class="topbar" id="topbar">
+      <div class="brand">
+        <img src="./icons/icon.svg" alt="" width="30" height="30">
+        <span>passadados</span>
+      </div>
+      <div class="top-actions">
+        <label class="profile-pick" id="profilePick" hidden>
+          <span class="sr-only">Perfil ativo</span>
+          <select id="profileSelect"></select>
+        </label>
+        <button type="button" id="themeBtn" class="icon-btn" aria-label="Alternar entre tema claro e escuro" title="Alternar tema"></button>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <!-- Introdução / privacidade / LGPD -->
+      <section id="screen-intro" class="screen" hidden>
+        <div class="hero">
+          <h1>Seus dados à mão, sem falar em voz alta</h1>
+          <p class="lead">O <strong>passadados</strong> guarda seus dados pessoais <strong>somente neste aparelho</strong> e mostra na tela o que você escolher, para a recepção ler e copiar. Nada de narrar CPF, endereço e telefone para todo mundo ouvir.</p>
+        </div>
+
+        <article class="card">
+          <h2>Seus dados ficam só com você</h2>
+          <p>Tudo o que você digita no passadados é salvo <strong>somente neste aparelho, dentro do seu navegador</strong>. Não existe cadastro, não existe login e não existe servidor guardando suas informações. Nós <strong>não temos acesso</strong> aos seus dados e não conseguimos ver, copiar, recuperar ou vender nada do que você guardou.</p>
+        </article>
+
+        <article class="card">
+          <h2>Sobre a LGPD</h2>
+          <p>O passadados foi pensado para respeitar a Lei Geral de Proteção de Dados (LGPD) desde a origem: <strong>não coletamos, não recebemos e não armazenamos</strong> seus dados pessoais. Como as informações nunca saem do seu aparelho, você continua sendo a única pessoa responsável e controladora dos seus dados. Você pode <strong>ver, corrigir, exportar e apagar</strong> tudo a qualquer momento, direto no aplicativo.</p>
+        </article>
+
+        <article class="card highlight">
+          <h2>Teste você mesmo</h2>
+          <p>Não precisa acreditar em nós. Faça este teste simples:</p>
+          <ol class="steps-list">
+            <li>Cadastre alguns dados de exemplo neste navegador.</li>
+            <li>Abra o passadados em <strong>outro navegador</strong>, ou em <strong>outro celular ou computador</strong>.</li>
+            <li>Você verá o app <strong>vazio</strong>. Isso mostra que os dados não estão em nenhum servidor: estão só no aparelho onde você os digitou.</li>
+          </ol>
+          <p>Quer ir além? Abra as ferramentas do desenvolvedor do navegador, na aba “Rede” (Network), e veja que ao salvar seus dados <strong>nenhuma informação é enviada</strong> para a internet.</p>
+        </article>
+
+        <article class="card warn">
+          <h2>Limitações importantes</h2>
+          <p>Como os dados ficam apenas no seu aparelho, eles podem ser perdidos se você <strong>limpar os dados do navegador</strong>, <strong>desinstalar o app</strong>, <strong>trocar ou perder o celular</strong>, ou se o sistema apagar o armazenamento do site. Por isso, <strong>faça backups regularmente</strong> (Configurações → Exportar) e, se possível, <strong>instale o passadados na tela inicial</strong>.</p>
+          <p>Quem estiver com o seu celular desbloqueado também pode abrir o app. Ative o <strong>PIN ou a biometria</strong> em Configurações se quiser uma camada extra de proteção.</p>
+        </article>
+
+        <article class="card">
+          <h2>A única consulta externa: o CEP</h2>
+          <p>Para preencher o endereço automaticamente, o passadados consulta o serviço público <strong>ViaCEP</strong>, enviando <strong>apenas o número do CEP que você digitou</strong>. Nenhum outro dado é enviado. Você pode desativar essa busca em Configurações e preencher o endereço à mão.</p>
+          <p class="footnote">Como em qualquer site, o provedor de hospedagem pode registrar dados técnicos de acesso (como o endereço IP de quem visita a página). Os dados que você cadastra no passadados não são enviados a ninguém.</p>
+        </article>
+
+        <div class="actions-col" id="introActions"></div>
+      </section>
+
+      <section id="screen-data" class="screen" hidden></section>
+      <section id="screen-share" class="screen" hidden></section>
+      <section id="screen-settings" class="screen" hidden></section>
+    </main>
+
+    <nav class="bottomnav" id="bottomnav" aria-label="Navegação principal">
+      <button type="button" data-screen="data">
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v10h16V7H4Zm4 1.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4ZM5 16c.3-1.6 1.5-2.5 3-2.5s2.7.9 3 2.5H5Zm8-6h5v1.6h-5V10Zm0 3h4v1.6h-4V13Z"/></svg>
+        <span>Meus dados</span>
+      </button>
+      <button type="button" data-screen="share">
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M12 5c5 0 9 4.5 10 7-1 2.5-5 7-10 7S3 14.500 2 12c1-2.500 5-7 10-7Zm0 2c-3.400 0-6.300 2.900-7.700 5 1.400 2.100 4.300 5 7.700 5s6.300-2.900 7.700-5C18.300 9.900 15.400 7 12 7Zm0 1.500a3.500 3.500 0 1 1 0 7 3.500 3.500 0 0 1 0-7Z"/></svg>
+        <span>Compartilhar</span>
+      </button>
+      <button type="button" data-screen="settings">
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M10.600 2h2.800l.5 2.600c.6.200 1.100.5 1.600.9l2.500-.9 1.400 2.400-2 1.700c.1.600.1 1.100 0 1.700l2 1.700-1.400 2.400-2.500-.9c-.5.400-1 .7-1.600.9L13.400 17h-2.800l-.5-2.600c-.6-.2-1.100-.5-1.600-.9l-2.500.9-1.400-2.400 2-1.700a5 5 0 0 1 0-1.700l-2-1.700 1.400-2.400 2.500.9c.5-.4 1-.7 1.600-.9L10.600 2ZM12 9a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-7 11h14v2H5v-2Z"/></svg>
+        <span>Configurações</span>
+      </button>
+    </nav>
+  </div>
+
+  <div id="present" class="present" hidden role="dialog" aria-modal="true" aria-label="Dados para mostrar"></div>
+  <div id="lock" class="lock" hidden role="dialog" aria-modal="true" aria-label="App bloqueado"></div>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+
+  <noscript><p class="noscript">O passadados precisa de JavaScript ativado para funcionar. Nenhum dado seu é enviado a servidores.</p></noscript>
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
